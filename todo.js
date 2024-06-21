@@ -116,3 +116,5 @@ function addTodo(){
 addButton.onclick = function(){
     addTodo();
 }
+
+let vari = "";
