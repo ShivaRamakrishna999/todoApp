@@ -28,12 +28,9 @@ function onDeleteTodo(todoId){
     let todoElement = document.getElementById(todoId)
     todoItemsContainer.removeChild(todoElement);
 
-    let deleteItemIndex = todoList.findIndex(function(eachItem){
-        let eachTodoId = eachItem.uniqueNo;
-        if(eachTodoId === todoId){
-            return true;
-        }
-    })
+    let deleteItemIndex = todoList.findIndex((eachItem) => eachItem.uniqueNo === todoId);
+              
+    console.log(deleteItemIndex);
 
     todoList.splice(deleteItemIndex,1);
     
@@ -95,7 +92,7 @@ function addTodo(){
     let inputElement = document.getElementById("inputElement");
     let inputValue = inputElement.value;
     todoLength = todoLength + 1;
-
+    console.log(todoLength);
     if (inputValue === ""){
         alert("Enter valid text");
         return;
